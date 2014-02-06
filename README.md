@@ -27,7 +27,7 @@ You can install ClassFunctions with Composer:
 ```json
 {
     "require": {
-        "mathiasverraes/classfunctions": "~1.0@alpha"
+        "mathiasverraes/classfunctions": "~1.0"
     }
 }
 ```
