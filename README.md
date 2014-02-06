@@ -10,13 +10,13 @@ use Verraes\ClassFunctions as CF;
 echo CF::fqcn($object);
 
 // Canonical class name of an object, of the form "My.Namespace.MyClass"
-echo CF::canonical($object); //  Verraes\Tests\MyClass
+echo CF::canonical($object);
 
-// Underscored and lowercased class name of an object, of the form "my.mamespace.my_class"
-echo CF::underscore($object); //  Verraes\Tests\MyClass
+// Underscored and lowercased class name of an object, of the form "my.namespace.my_class"
+echo CF::underscore($object);
 
 // The class name of an object, without the namespace
-echo CF::short($object); //  Verraes\Tests\MyClass
+echo CF::short($object);
 ```
 
 ## Installation

@@ -1,6 +1,6 @@
 <?php
 
-namespace Verraes;
+namespace Verraes\ClassFunctions;
 
 final class ClassFunctions
 {

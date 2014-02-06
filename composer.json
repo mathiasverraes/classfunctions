@@ -17,21 +17,17 @@
     "support": {
         "issues": "https://github.com/mathiasverraes/classfunctions/issues"
     },
-    "minimum-stability": "dev",
 
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
     },
-
     "autoload": {
-        "psr-4": {
-            "Verraes\\ClassFunctions\\": "src/",
-            "Verraes\\ClassFunctions\\Tests\\": "tests/"
+        "psr-0": {
+            "Verraes": "src"
         }
     },
-
 
     "require": {
         "php": ">=5.5"

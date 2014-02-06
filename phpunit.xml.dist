@@ -12,7 +12,7 @@
         >
     <testsuites>
         <testsuite name="ClassFunctions">
-            <directory suffix="Test.php">tests</directory>
+            <directory suffix="Test.php">src</directory>
         </testsuite>
     </testsuites>
 </phpunit>

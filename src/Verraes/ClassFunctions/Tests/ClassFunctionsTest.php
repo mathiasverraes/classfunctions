@@ -1,9 +1,8 @@
 <?php
+namespace Verraes\ClassFunctions\Tests;
 
-namespace Verraes\Tests;
-
-use Verraes\ClassFunctions as CF;
 use PHPUnit_Framework_TestCase;
+use Verraes\ClassFunctions\ClassFunctions as CF;
 
 final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
 {
@@ -19,7 +18,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function fqcn()
     {
-        $this->assertEquals('Verraes\Tests\MyClass', CF::fqcn($this->object));
+        $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', CF::fqcn($this->object));
     }
 
     /**
@@ -27,7 +26,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function canonical()
     {
-        $this->assertEquals('Verraes.Tests.MyClass', CF::canonical($this->object));
+        $this->assertEquals('Verraes.ClassFunctions.Tests.MyClass', CF::canonical($this->object));
     }
 
     /**
@@ -35,7 +34,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function underscore()
     {
-        $this->assertEquals('verraes.tests.my_class', CF::underscore($this->object));
+        $this->assertEquals('verraes.class_functions.tests.my_class', CF::underscore($this->object));
     }
 
     /**
