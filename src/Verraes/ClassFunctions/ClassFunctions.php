@@ -48,5 +48,15 @@ final class ClassFunctions
         $parts = explode('\\', self::fqcn($object));
         return end($parts);
     }
+
+    /**
+     * Returns an array of CONSTANT_NAME => contents for a given class
+     * @param $className
+     * @return string[]
+     */
+    public static function constants($className)
+    {
+        return (new \ReflectionClass($className))->getConstants();
+    }
 }
 

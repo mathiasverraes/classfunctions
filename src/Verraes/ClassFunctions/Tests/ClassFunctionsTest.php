@@ -44,6 +44,24 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('MyClass', CF::short($this->object));
     }
+
+    /**
+     * @test
+     */
+    public function constants()
+    {
+        $this->assertEquals(
+            [
+                'MY_CONST1' => 'a',
+                'MY_CONST2' => 'b'
+            ],
+            CF::constants('Verraes\ClassFunctions\Tests\MyClass')
+        );
+    }
 }
 
-class MyClass {}
+class MyClass
+{
+    const MY_CONST1 = 'a';
+    const MY_CONST2 = 'b';
+}
