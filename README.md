@@ -4,19 +4,19 @@ PHP Utilities to get different variations of class names
 
 ```
 <?php
-use Verraes\ClassFunctions as CF;
+use Verraes\ClassFunctions\ClassFunctions;
 
 // Fully qualified class name of an object, without a leading backslash
-echo CF::fqcn($object);
+echo ClassFunctions::fqcn($object);
 
 // Canonical class name of an object, of the form "My.Namespace.MyClass"
-echo CF::canonical($object);
+echo ClassFunctions::canonical($object);
 
 // Underscored and lowercased class name of an object, of the form "my.namespace.my_class"
-echo CF::underscore($object);
+echo ClassFunctions::underscore($object);
 
 // The class name of an object, without the namespace
-echo CF::short($object);
+echo ClassFunctions::short($object);
 ```
 
 ## Installation

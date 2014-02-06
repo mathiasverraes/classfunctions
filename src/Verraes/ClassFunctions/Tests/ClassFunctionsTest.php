@@ -2,7 +2,7 @@
 namespace Verraes\ClassFunctions\Tests;
 
 use PHPUnit_Framework_TestCase;
-use Verraes\ClassFunctions\ClassFunctions as CF;
+use Verraes\ClassFunctions\ClassFunctions;
 
 final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function fqcn()
     {
-        $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', CF::fqcn($this->object));
+        $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', ClassFunctions::fqcn($this->object));
     }
 
     /**
@@ -26,7 +26,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function canonical()
     {
-        $this->assertEquals('Verraes.ClassFunctions.Tests.MyClass', CF::canonical($this->object));
+        $this->assertEquals('Verraes.ClassFunctions.Tests.MyClass', ClassFunctions::canonical($this->object));
     }
 
     /**
@@ -34,7 +34,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function underscore()
     {
-        $this->assertEquals('verraes.class_functions.tests.my_class', CF::underscore($this->object));
+        $this->assertEquals('verraes.class_functions.tests.my_class', ClassFunctions::underscore($this->object));
     }
 
     /**
@@ -42,7 +42,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
      */
     public function short()
     {
-        $this->assertEquals('MyClass', CF::short($this->object));
+        $this->assertEquals('MyClass', ClassFunctions::short($this->object));
     }
 
     /**
@@ -51,11 +51,8 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
     public function constants()
     {
         $this->assertEquals(
-            [
-                'MY_CONST1' => 'a',
-                'MY_CONST2' => 'b'
-            ],
-            CF::constants('Verraes\ClassFunctions\Tests\MyClass')
+            ['MY_CONST1' => 'a', 'MY_CONST2' => 'b'],
+            ClassFunctions::constants('Verraes\ClassFunctions\Tests\MyClass')
         );
     }
 }
