@@ -7,16 +7,20 @@ PHP Utilities to get different variations of class names
 use Verraes\ClassFunctions\ClassFunctions;
 
 // Fully qualified class name of an object, without a leading backslash
-echo ClassFunctions::fqcn($object);
+ClassFunctions::fqcn($object);
 
 // Canonical class name of an object, of the form "My.Namespace.MyClass"
-echo ClassFunctions::canonical($object);
+ClassFunctions::canonical($object);
 
 // Underscored and lowercased class name of an object, of the form "my.namespace.my_class"
-echo ClassFunctions::underscore($object);
+ClassFunctions::underscore($object);
 
 // The class name of an object, without the namespace
-echo ClassFunctions::short($object);
+ClassFunctions::short($object);
+
+// Free bonus feature:
+// Returns an associative array of 'CONSTANT_NAME' => 'value'
+ClassFunctions::constants('Verraes\ClassFunctions\Tests\MyClass')
 ```
 
 ## Installation
@@ -27,7 +31,7 @@ You can install ClassFunctions with Composer:
 ```json
 {
     "require": {
-        "mathiasverraes/classfunctions": "~1.0"
+        "mathiasverraes/classfunctions": "1.*"
     }
 }
 ```
