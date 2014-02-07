@@ -2,7 +2,7 @@
 
 PHP Utilities to get different variations of class names
 
-```
+```php
 <?php
 use Verraes\ClassFunctions\ClassFunctions;
 
