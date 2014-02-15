@@ -11,7 +11,9 @@
     "authors": [
         {
             "name": "Mathias Verraes",
-            "email": "mathias@verraes.net"
+            "email": "mathias@verraes.net",
+            "role": "Developer",
+            "homepage": "http://verraes.net"
         }
     ],
     "support": {
