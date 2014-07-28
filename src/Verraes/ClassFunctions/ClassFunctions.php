@@ -6,21 +6,24 @@ final class ClassFunctions
 {
     /**
      * Fully qualified class name of an object, without a leading backslash
-     * @param $object
+     * @param object|string $object
      * @return string
-     * @throws \InvalidArgumentException
      */
     public static function fqcn($object)
     {
-        if (!is_object($object)) {
-            throw new \InvalidArgumentException("Expected an object");
+        if(is_string($object)) {
+            return $object;
         }
-        return trim(get_class($object), '\\');
+
+        if (is_object($object)) {
+            return trim(get_class($object), '\\');
+        }
+        throw new \InvalidArgumentException(sprintf("Expected an object or a string, got %s", gettype($object)));
     }
 
     /**
      * Canonical class name of an object, of the form "My.Namespace.MyClass"
-     * @param $object
+     * @param object|string $object
      * @return string
      */
     public static function canonical($object)
@@ -30,7 +33,7 @@ final class ClassFunctions
 
     /**
      * Underscored and lowercased class name of an object, of the form "my.mamespace.my_class"
-     * @param $object
+     * @param object|string $object
      * @return string
      */
     public static function underscore($object)
@@ -40,7 +43,7 @@ final class ClassFunctions
 
     /**
      * The class name of an object, without the namespace
-     * @param $object
+     * @param object|string $object
      * @return string
      */
     public static function short($object)
@@ -51,7 +54,7 @@ final class ClassFunctions
 
     /**
      * Returns an array of CONSTANT_NAME => contents for a given class
-     * @param $className
+     * @param string $className
      * @return string[]
      */
     public static function constants($className)

@@ -7,10 +7,12 @@ use Verraes\ClassFunctions\ClassFunctions;
 final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
 {
     private $object;
+    private $string;
 
     protected function setUp()
     {
         $this->object = new MyClass;
+        $this->string = 'Verraes\ClassFunctions\Tests\MyClass';
     }
 
     /**
@@ -19,6 +21,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
     public function fqcn()
     {
         $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', ClassFunctions::fqcn($this->object));
+        $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', ClassFunctions::fqcn($this->string));
     }
 
     /**
@@ -27,6 +30,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
     public function canonical()
     {
         $this->assertEquals('Verraes.ClassFunctions.Tests.MyClass', ClassFunctions::canonical($this->object));
+        $this->assertEquals('Verraes.ClassFunctions.Tests.MyClass', ClassFunctions::canonical($this->string));
     }
 
     /**
@@ -35,6 +39,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
     public function underscore()
     {
         $this->assertEquals('verraes.class_functions.tests.my_class', ClassFunctions::underscore($this->object));
+        $this->assertEquals('verraes.class_functions.tests.my_class', ClassFunctions::underscore($this->string));
     }
 
     /**
@@ -43,6 +48,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
     public function short()
     {
         $this->assertEquals('MyClass', ClassFunctions::short($this->object));
+        $this->assertEquals('MyClass', ClassFunctions::short($this->string));
     }
 
     /**

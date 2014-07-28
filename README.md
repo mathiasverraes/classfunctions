@@ -17,8 +17,14 @@ ClassFunctions::underscore($object);
 
 // The class name of an object, without the namespace
 ClassFunctions::short($object);
+```
 
-// Free bonus feature:
+The above methods also accept strings.
+
+Free bonus feature:
+
+```php
+<?php
 // Returns an associative array of 'CONSTANT_NAME' => 'value'
 ClassFunctions::constants('Verraes\ClassFunctions\Tests\MyClass')
 ```
