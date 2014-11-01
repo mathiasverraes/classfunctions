@@ -22,6 +22,7 @@ final class ClassFunctionsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', ClassFunctions::fqcn($this->object));
         $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', ClassFunctions::fqcn($this->string));
+        $this->assertEquals('Verraes\ClassFunctions\Tests\MyClass', ClassFunctions::fqcn('Verraes.ClassFunctions.Tests.MyClass'));
     }
 
     /**
