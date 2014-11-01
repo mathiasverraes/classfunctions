@@ -11,8 +11,8 @@ final class ClassFunctions
      */
     public static function fqcn($object)
     {
-        if(is_string($object)) {
-            return $object;
+        if (is_string($object)) {
+            return str_replace('.', '\\', $object);
         }
 
         if (is_object($object)) {
