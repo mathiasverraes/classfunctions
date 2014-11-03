@@ -19,7 +19,7 @@ ClassFunctions::underscore($object);
 ClassFunctions::short($object);
 ```
 
-The above methods also accept strings.
+The above methods also accept strings, and `ClassFunctions::fqcn()` accepts a canonical class name as returned from `ClassFunctions::canonical()`. 
 
 Free bonus feature:
 
