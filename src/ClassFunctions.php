@@ -2,6 +2,9 @@
 
 namespace Verraes\ClassFunctions;
 
+/**
+ * @deprecated
+ */
 final class ClassFunctions
 {
     /**
@@ -11,14 +14,7 @@ final class ClassFunctions
      */
     public static function fqcn($object)
     {
-        if (is_string($object)) {
-            return str_replace('.', '\\', $object);
-        }
-
-        if (is_object($object)) {
-            return trim(get_class($object), '\\');
-        }
-        throw new \InvalidArgumentException(sprintf("Expected an object or a string, got %s", gettype($object)));
+        return fqcn($object);
     }
 
     /**
@@ -28,7 +24,7 @@ final class ClassFunctions
      */
     public static function canonical($object)
     {
-        return str_replace('\\', '.', self::fqcn($object));
+        return canonical($object);
     }
 
     /**
@@ -38,8 +34,9 @@ final class ClassFunctions
      */
     public static function underscore($object)
     {
-        return strtolower(preg_replace('~(?<=\\w)([A-Z])~', '_$1', self::canonical($object)));
+        return underscore($object);
     }
+
 
     /**
      * The class name of an object, without the namespace
@@ -48,9 +45,9 @@ final class ClassFunctions
      */
     public static function short($object)
     {
-        $parts = explode('\\', self::fqcn($object));
-        return end($parts);
+        return short($object);
     }
+
 
     /**
      * Returns an array of CONSTANT_NAME => contents for a given class
@@ -59,7 +56,7 @@ final class ClassFunctions
      */
     public static function constants($className)
     {
-        return (new \ReflectionClass($className))->getConstants();
+        return constants($className);
     }
 }
 
