@@ -26,8 +26,8 @@
         }
     },
     "autoload": {
-        "psr-0": {
-            "Verraes": "src"
+        "psr-4": {
+            "Verraes\\": "src/"
         }
     },
 
