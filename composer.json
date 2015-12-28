@@ -26,8 +26,14 @@
         }
     },
     "autoload": {
-        "psr-0": {
-            "Verraes": "src"
+        "psr-4": {
+            "Verraes\\ClassFunctions\\": "src/"
+        },
+        "files": ["src/functions.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Verraes\\ClassFunctions\\Tests\\": "tests/"
         }
     },
 
@@ -42,8 +48,3 @@
         "bin-dir": "bin"
     }
 }
-
-
-
-
-
